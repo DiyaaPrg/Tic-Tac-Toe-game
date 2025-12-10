@@ -8,9 +8,9 @@ This project focuses on practicing event handling, UI design, drawing graphics, 
 (Add screenshots of your game here)
 Example:
 
-![Tic Tac Toe Screenshot](Game Preview/Pic1.png)
-![Tic Tac Toe Screenshot](Game Preview/Pic2.png)
-![Tic Tac Toe Screenshot](Game Preview/Pic3.png)
+![Tic Tac Toe Screenshot] (Game Preview/Pic1.png)
+![Tic Tac Toe Screenshot] (Game Preview/Pic2.png)
+![Tic Tac Toe Screenshot] (Game Preview/Pic3.png)
 
 
 ✨ Features
