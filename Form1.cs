@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -313,24 +313,11 @@ namespace TicTacToe
 
         }
 
-        private void pb1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pb1_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
 
         private void btRestarteGame_Click(object sender, EventArgs e)
         {
             RestGame();
         }
 
-        private void panelBoard_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
