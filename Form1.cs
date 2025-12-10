@@ -105,96 +105,58 @@ namespace TicTacToe
             }
         }
 
-        bool CheckRow1()
+        bool CheckLine(PictureBox a, PictureBox b, PictureBox c)
         {
-            char symbol1 = (Convert.ToChar(pb1.Tag));
-            char symbol2 = (Convert.ToChar(pb2.Tag));
-            char symbol3 = (Convert.ToChar(pb3.Tag));
+            char x = Convert.ToChar(a.Tag);
+            char y = Convert.ToChar(b.Tag);
+            char z = Convert.ToChar(c.Tag);
 
-            if ((symbol1 == symbol2) && (symbol1 == symbol3))
+            if (x == y && x == z)
             {
-                ColorWinningSymbols(pb1, pb2, pb3);
+                ColorWinningSymbols(a, b, c);
                 return true;
             }
-            else
-                return false;
+            return false;
+        }
+
+        bool CheckRow1()
+        {
+            return CheckLine(pb1, pb2, pb3);
         }
 
         bool CheckRow2()
         {
-            if ((Convert.ToChar(pb4.Tag) == Convert.ToChar(pb5.Tag)) && (Convert.ToChar(pb4.Tag) == Convert.ToChar(pb6.Tag)))
-            {
-                ColorWinningSymbols(pb4, pb5, pb6);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb4, pb5, pb6);
         }
 
         bool CheckRow3()
         {
-            if ((Convert.ToChar(pb7.Tag) == Convert.ToChar(pb8.Tag)) && (Convert.ToChar(pb7.Tag) == Convert.ToChar(pb9.Tag)))
-            {
-                ColorWinningSymbols(pb7, pb8, pb9);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb7, pb8, pb9);
         }
 
         bool CheckColumn1()
         {
-            if ((Convert.ToChar(pb1.Tag) == Convert.ToChar(pb4.Tag)) && (Convert.ToChar(pb1.Tag) == Convert.ToChar(pb7.Tag)))
-            {
-                ColorWinningSymbols(pb1, pb4, pb7);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb1, pb4, pb7);
         }
 
         bool CheckColumn2()
         {
-            if ((Convert.ToChar(pb2.Tag) == Convert.ToChar(pb5.Tag)) && (Convert.ToChar(pb2.Tag) == Convert.ToChar(pb8.Tag)))
-            {
-                ColorWinningSymbols(pb2, pb5, pb8);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb2, pb5, pb8);
         }
 
         bool CheckColumn3()
         {
-            if ((Convert.ToChar(pb3.Tag) == Convert.ToChar(pb6.Tag)) && (Convert.ToChar(pb3.Tag) == Convert.ToChar(pb9.Tag)))
-            {
-                ColorWinningSymbols(pb3, pb6, pb9);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb3, pb6, pb9);
         }
 
         bool CheckDiagonal1()
         {
-            if ((Convert.ToChar(pb1.Tag) == Convert.ToChar(pb5.Tag)) && (Convert.ToChar(pb1.Tag) == Convert.ToChar(pb9.Tag)))
-            {
-                ColorWinningSymbols(pb1, pb5, pb9);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb1, pb5, pb9);
         }
 
         bool CheckDiagonal2()
         {
-            if ((Convert.ToChar(pb3.Tag) == Convert.ToChar(pb5.Tag)) && (Convert.ToChar(pb3.Tag) == Convert.ToChar(pb7.Tag)))
-            {
-                ColorWinningSymbols(pb3, pb5, pb7);
-                return true;
-            }
-            else
-                return false;
+            return CheckLine(pb3, pb5, pb7);
         }
 
         bool CheckWinner(byte cell)
@@ -260,23 +222,29 @@ namespace TicTacToe
             counter = 0;
             isXTurn = true;
 
-            byte tagnumber = 1;
-
             foreach (PictureBox PB in panelBoard.Controls.OfType<PictureBox>())
             {
                 PB.Enabled = true;
-                PB.Image = Resources.question_mark_9796625;
+                PB.Image = Resources.question_mark_96;
                 PB.BackColor = Color.Black;
-                PB.Tag = tagnumber;
-                ++tagnumber;
             }
+
+            pb1.Tag = 1;
+            pb2.Tag = 2;
+            pb3.Tag = 3;
+            pb4.Tag = 4;
+            pb5.Tag = 5;
+            pb6.Tag = 6;
+            pb7.Tag = 7;
+            pb8.Tag = 8;
+            pb9.Tag = 9;
+
 
             // Labels:
             lbWhichPlayer.Text = "Player 1";
             lbWhichWinner.Text = "In Progress";
 
-
-        }
+ }
 
         void XO_Handler(object sender, EventArgs e)
         {
