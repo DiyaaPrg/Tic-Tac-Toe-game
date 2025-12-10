@@ -1,4 +1,4 @@
-﻿namespace TicTacToe
+namespace TicTacToe
 {
     partial class Form1
     {
@@ -138,8 +138,6 @@
             this.pb1.TabIndex = 7;
             this.pb1.TabStop = false;
             this.pb1.Tag = "1";
-            this.pb1.Click += new System.EventHandler(this.pb1_Click);
-            this.pb1.MouseEnter += new System.EventHandler(this.pb1_MouseEnter);
             // 
             // pb2
             // 
@@ -253,7 +251,6 @@
             this.panelBoard.Name = "panelBoard";
             this.panelBoard.Size = new System.Drawing.Size(496, 321);
             this.panelBoard.TabIndex = 24;
-            this.panelBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoard_Paint);
             // 
             // Form1
             // 
